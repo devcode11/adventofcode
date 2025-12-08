@@ -1,17 +1,10 @@
 use std::collections::HashSet;
-
-fn read_input(day: u32, example: bool) -> String {
-    let input_file_path = format!(
-        "inputs/day{}{}.txt",
-        day,
-        if example { "_example" } else { "" }
-    );
-    std::fs::read_to_string(input_file_path).unwrap()
-}
+#[path = "utils.rs"]
+mod utils;
 
 #[test]
 fn problem1() {
-    println!("Result: {}", solution1(read_input(7, false)));
+    println!("Result: {}", solution1(utils::read_input(7, false)));
 }
 
 fn solution1(input: String) -> u32 {
@@ -41,7 +34,7 @@ fn solution1(input: String) -> u32 {
 
 #[test]
 fn problem2() {
-    println!("Result: {}", solution2(read_input(7, false)));
+    println!("Result: {}", solution2(utils::read_input(7, false)));
 }
 
 fn solution2(input: String) -> u64 {
